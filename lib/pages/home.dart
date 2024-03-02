@@ -1,5 +1,6 @@
-import 'package:flutter/cupertino.dart';
+//import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -16,52 +17,48 @@ class _HomeState extends State<Home> {
   @override
   void initState() {
     super.initState();
-
+    _toDo.addAll(['buy','gty','milk']);
   }
 
   Widget _createTask(BuildContext context, int index) {
-    return Dismissible(
-      key: Key(_toDo[index]),
-      onDismissed: (direction) {
+    return Slidable(
+        key: Key(_toDo[index]),
+        startActionPane: ActionPane(
+          motion: const ScrollMotion(),
+          dismissible: DismissiblePane(
+            onDismissed: (){
+              print("\n\nOUT TO DO LIST: ${_toDo}\n\n");
+            },
+          ),
+          children: [
+            SlidableAction(
+              onPressed:(BuildContext context){
+               // print("\n\nOUT TO DO LIST: ${_toDo[index]}\n\n");
+              },
+              backgroundColor: Colors.redAccent,
+              icon: Icons.delete,
+              label:'Delete',
+
+            ),
+          ],
+        ),
+
+
+
+
+        child: ListTile(
+      title: Text(_toDo[index],style: TextStyle(
+        fontSize: 30,
+      )),
+      leading: Icon(Icons.email),
+      onTap: (){
         setState(() {
-          _toDo.removeAt(index);
+          _selected_index = index;
         });
       },
-      background: Container(
-        color: Colors.red,
-      ),
-      child: ListTile(
-        title: Text(
-          _toDo[index],
-          style: TextStyle(
-            fontFamily: 'Lost',
-            fontSize: 30,
-          ),
-        ),
+    )
 
-        onTap: () {
-          setState(() {
-            _selected_index = index;
-          });
-        },
-        selected: index == _selected_index,
-        selectedColor: Colors.blueGrey,
 
-        trailing: IconButton(
-          onPressed: () {
-            setState(() {
-              _toDo.removeAt(index);
-            });
-          },
-          icon: Icon(Icons.delete_rounded),
-        ),
-        onLongPress: () {
-          setState(() {
-            _selected_index = -1;
-          });
-        },
-        //tileColor: Colors.white,
-      ),
     );
   }
 
