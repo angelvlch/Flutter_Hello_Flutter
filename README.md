@@ -10,4 +10,5 @@ This is a simple to do application written in Flutter
 The application allows you to do the following tasks:
 - add tasks to the to-do list;
 - remove tasks from the to-do list
-[Screen_recording_20240302_191929.webm](Screen_recording_20240302_191929.webm)
+
+<video controls src="Screen_recording_20240302_194940.mp4" title="Title"></video>
