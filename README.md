@@ -11,4 +11,7 @@ The application allows you to do the following tasks:
 - add tasks to the to-do list;
 - remove tasks from the to-do list
 
-<video controls src="Screen_recording_20240302_194940.mp4" title="Title"></video>
+
+Uploading Screen_recording_20240302_194940.mp4…
+
+
