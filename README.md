@@ -10,4 +10,4 @@ This is a simple to do application written in Flutter
 The application allows you to do the following tasks:
 - add tasks to the to-do list;
 - remove tasks from the to-do list;
-  ![Uploading Screen_recording_20240302_191929.webm…]()
+![Uploading Screen_recording_20240302_191929.webm…]()
