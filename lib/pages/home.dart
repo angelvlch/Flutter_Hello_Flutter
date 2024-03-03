@@ -29,14 +29,12 @@ class _HomeState extends State<Home> {
             onDismissed: (){
               setState(() {
                 print("Selected index= $_selected_index, index = $index");
-                if( _selected_index == index) {
                   _selected_index = -1;
-                }
                 _toDo.removeAt(index);
 
               });
-              print("Selected index= $_selected_index, index = $index");
-              print("\nOUT TO DO LIST: $_toDo\n");
+              //print("Selected index= $_selected_index, index = $index");
+              //print("\nOUT TO DO LIST: $_toDo\n");
             },
           ),
           children: [
