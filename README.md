@@ -10,5 +10,10 @@ This is a simple to do application written in Flutter
 The application allows you to do the following tasks:
 - add tasks to the to-do list;
 - remove tasks from the to-do list
-
+  
 https://github.com/angelvlch/Neobis_Flutter_Hello_Flutter/assets/119874002/97931454-d1d2-4714-8730-4109ad026ab2
+
+<<<<<<< HEAD
+https://github.com/angelvlch/Neobis_Flutter_Hello_Flutter/assets/119874002/97931454-d1d2-4714-8730-4109ad026ab2
+=======
+>>>>>>> 896c986b0fdfc27a031cfa696583f46a6d816460
