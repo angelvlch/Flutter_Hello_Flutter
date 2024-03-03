@@ -17,7 +17,7 @@ class _HomeState extends State<Home> {
   @override
   void initState() {
     super.initState();
-    _toDo.addAll(['buy','gty','milk']);
+    _toDo.addAll([]);
   }
 
   Widget _createTask(BuildContext context, int index) {
@@ -27,7 +27,16 @@ class _HomeState extends State<Home> {
           motion: const ScrollMotion(),
           dismissible: DismissiblePane(
             onDismissed: (){
-              print("\n\nOUT TO DO LIST: ${_toDo}\n\n");
+              setState(() {
+                print("Selected index= $_selected_index, index = $index");
+                if( _selected_index == index) {
+                  _selected_index = -1;
+                }
+                _toDo.removeAt(index);
+
+              });
+              print("Selected index= $_selected_index, index = $index");
+              print("\nOUT TO DO LIST: $_toDo\n");
             },
           ),
           children: [
@@ -50,12 +59,18 @@ class _HomeState extends State<Home> {
       title: Text(_toDo[index],style: TextStyle(
         fontSize: 30,
       )),
-      leading: Icon(Icons.email),
+      leading: Icon(Icons.check_box_outline_blank),
       onTap: (){
         setState(() {
+          print(index);
           _selected_index = index;
         });
       },
+          onLongPress: (){
+        setState(() {
+          _selected_index = -1;
+        });
+          },
     )
 
 
@@ -94,7 +109,7 @@ class _HomeState extends State<Home> {
           Text(
             _selected_index == -1
                 ? 'Nothing selected'
-                : 'Selected: ${_toDo[_selected_index]}',
+                 : 'Selected: ${_toDo[_selected_index]}',
             style: TextStyle(
               fontSize: 30,
               fontFamily: 'Lost',
